@@ -7,7 +7,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoModel
 base_path = './internlm2-chat-7b'
 os.system(f'git clone https://code.openxlab.org.cn/OpenLMLab/internlm2-chat-7b.git {base_path}')
 os.system(f'cd {base_path} && git lfs pull')
-os.system("mim install mmcv-full")
 
 tokenizer = AutoTokenizer.from_pretrained(base_path,trust_remote_code=True)
 model = AutoModelForCausalLM.from_pretrained(base_path,trust_remote_code=True, torch_dtype=torch.float16).cuda()
